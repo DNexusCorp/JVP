@@ -168,7 +168,7 @@ export default function App() {
       {/* Main Content Area */}
       <main className="flex-grow w-full pb-12">
 
-        {/* Hero Section */}
+            {/* Hero Section */}
             <HeroSlider
               onNavigate={handleNavigate}
               onShopNow={(slug) => {
@@ -246,6 +246,7 @@ export default function App() {
                   onClick={() => {
                     setSelectedCategory(null);
                     setCurrentView('shop');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
                   }}
                   className="w-full bg-white text-[#00254d] font-bold text-xs border border-[#00254d] py-2.5 rounded-full"
                 >
