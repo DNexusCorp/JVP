@@ -167,6 +167,10 @@ export default function App() {
 
       {/* Main Content Area */}
       <main className="flex-grow w-full pb-12">
+        
+        {/* VIEW 1: HOME VIEW */}
+        {currentView === 'home' && (
+          <div className="animate-fadeIn">
 
             {/* Hero Section */}
             <HeroSlider
@@ -177,15 +181,10 @@ export default function App() {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
             />
-        
-        {/* VIEW 1: HOME VIEW */}
-        {currentView === 'home' && (
-          <div className="animate-fadeIn bg-[#EBF1FF] rounded-2xl p-2 sm:p-4 md:p-6 mb-8">
-            
-            
 
-            {/* Value Proposition Bar (6 Trust Badges) */}
-            <ValueProps />
+            <div className="bg-[#EBF1FF] rounded-2xl p-2 sm:p-4 md:p-6 mb-8">
+              {/* Value Proposition Bar (6 Trust Badges) */}
+              <ValueProps />
 
             {/* Category Quick-Links (Circular Carousel) */}
             <CategoryStrip
@@ -332,6 +331,8 @@ export default function App() {
                 ))}
               </div>
             </section>
+            
+            </div>
 
           </div>
         )}
