@@ -166,12 +166,12 @@ export default function App() {
       />
 
       {/* Main Content Area */}
-      <main className="flex-grow w-full pb-12">
+      <main className="flex-grow w-full max-w-[1280px] mx-auto pb-12">
         
         {/* VIEW 1: HOME VIEW */}
         {currentView === 'home' && (
-          <div className="animate-fadeIn">
-
+          <div className="animate-fadeIn bg-[#EBF1FF] rounded-2xl p-2 sm:p-4 md:p-6 mb-8">
+            
             {/* Hero Section */}
             <HeroSlider
               onNavigate={handleNavigate}
@@ -182,9 +182,8 @@ export default function App() {
               }}
             />
 
-            <div className="bg-[#EBF1FF] rounded-2xl p-2 sm:p-4 md:p-6 mb-8">
-              {/* Value Proposition Bar (6 Trust Badges) */}
-              <ValueProps />
+            {/* Value Proposition Bar (6 Trust Badges) */}
+            <ValueProps />
 
             {/* Category Quick-Links (Circular Carousel) */}
             <CategoryStrip
@@ -245,7 +244,6 @@ export default function App() {
                   onClick={() => {
                     setSelectedCategory(null);
                     setCurrentView('shop');
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
                   }}
                   className="w-full bg-white text-[#00254d] font-bold text-xs border border-[#00254d] py-2.5 rounded-full"
                 >
@@ -331,8 +329,6 @@ export default function App() {
                 ))}
               </div>
             </section>
-            
-            </div>
 
           </div>
         )}
