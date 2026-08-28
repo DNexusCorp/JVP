@@ -53,7 +53,7 @@ export const HeroSlider = ({ onShopNow }) => {
   const slide = slides[currentSlide];
 
   return (
-    <section className="relative w-full h-[420px] md:h-[500px] lg:h-[540px] overflow-hidden bg-[#09223F] mb-12 select-none shadow-xl">
+    <section className="relative w-full h-[420px] md:h-[500px] lg:h-[540px] overflow-hidden bg-[#09223F] mb-0 select-none shadow-xl">
       {/* Background Image with Overlay */}
       <div
         className="absolute inset-0 bg-cover bg-center w-full h-full transition-all duration-700 transform scale-105"

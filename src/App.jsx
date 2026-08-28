@@ -165,6 +165,18 @@ export default function App() {
         onNavigate={handleNavigate}
       />
 
+      {/* Hero Section - Full Width, Outside Main Container */}
+      {currentView === 'home' && (
+        <HeroSlider
+          onNavigate={handleNavigate}
+          onShopNow={(slug) => {
+            setSelectedCategory(slug || null);
+            setCurrentView('shop');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
+        />
+      )}
+
       {/* Main Content Area */}
       <main className="flex-grow w-full max-w-[1280px] mx-auto pb-12">
         
@@ -172,16 +184,6 @@ export default function App() {
         {currentView === 'home' && (
           <div className="animate-fadeIn bg-[#EBF1FF] rounded-2xl p-2 sm:p-4 md:p-6 mb-8">
             
-            {/* Hero Section */}
-            <HeroSlider
-              onNavigate={handleNavigate}
-              onShopNow={(slug) => {
-                setSelectedCategory(slug || null);
-                setCurrentView('shop');
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-              }}
-            />
-
             {/* Value Proposition Bar (6 Trust Badges) */}
             <ValueProps />
 

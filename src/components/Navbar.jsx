@@ -12,7 +12,7 @@ export const Navbar = ({
   const navItems = [
     {
       name: 'SPIRITUAL PRODUCTS',
-      slug: 'malas-japa',
+      slug: null,
       subItems: [
         { title: 'Holy Japa Malas', desc: 'Tulasi, Karungali & Rudraksha beads for daily chanting', slug: 'malas-japa' },
         { title: 'Spiritual Wrist Bracelets', desc: 'Protective planetary wrist wear and sacred threads', slug: 'bracelets' },
@@ -80,7 +80,7 @@ export const Navbar = ({
               setHoveredMenu(null);
             }}
             className={`py-3 px-3 transition-colors duration-200 flex items-center hover:text-[#fdc34d] cursor-pointer ${
-              currentView === 'home' && !activeCategory ? 'text-[#fdc34d]' : 'text-white/90'
+              currentView === 'home' ? 'text-[#fdc34d]' : 'text-white/90'
             }`}
             title="Home"
             id="nav-home-btn"
@@ -91,7 +91,7 @@ export const Navbar = ({
           {/* Desktop Nav Categories - overflow visible so dropdown floats cleanly over page */}
           <div className="hidden md:flex items-center space-x-1 lg:space-x-4 xl:space-x-6 text-[13px] tracking-wide font-medium overflow-visible">
             {navItems.map((item) => {
-              const isCurrent = activeCategory === item.slug;
+              const isCurrent = currentView === 'shop' && activeCategory === item.slug;
               const isHovered = hoveredMenu === item.name;
 
               return (
